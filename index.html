@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Portfolio Home Page</title>
+        <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body class="pattern">
+        <nav>
+            <ul>
+                <li><a href="contact-me.html">Contact Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about-me.html">About Me</a></li>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </nav>
+        <div class="header">
+            <img src="assets/animated-logo.gif" alt="animated monogram logo" style="width:100%;height:auto%;">
+        </div>
+
+      <div class="container">  <div class="row">
+            <div class="column"><h1>Hey, I'm Katie</h1>
+            <p>I'm a graphic designer fresh out of college. I have exerience with most areas of graphic design but I'm most proficient in motion graphics and logo design.</p></div>
+
+            <div class="column"><img src="assets/Me.png" alt="Photo of me" style="width:50%;height:auto;"></div>
+        </div></div>
+
+
+        <button type="button" class="block" onclick="document.location='about-me.html'">More About Me</button>
+
+        <h2>My Work</h2>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="assets/slideshow/Slideshow%20thumbnails-01.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+                <img src="assets/slideshow/Slideshow%20thumbnails-02.png" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="assets/slideshow/Slideshow%20thumbnails-03.png" style="width:100%">
+            </div>
+            <br>
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+
+
+        <button type="button" class="block2" onclick="document.location='portfolio.html'">See More</button>
+        <br>
+        <footer class="footer">
+            <img src="assets/social-icons/Insta.png" alt="instagram icon" style="width:30px;height:30px;">
+            <img src="assets/social-icons/Linkedin.png" alt="linkedin icon" style="width:30px;height:30px;">
+        </footer>
+
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Next/previous controls
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            // Thumbnail image controls
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = slides.length}
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";}
+        </script>
+    </body>
+</html> 
